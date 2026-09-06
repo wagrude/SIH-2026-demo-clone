@@ -40,7 +40,7 @@ export default function LoginForm() {
       <div>
         <label
           htmlFor="customer-id"
-          className="mb-2 block text-sm font-semibold text-slate-700"
+          className="mb-2 block text-sm font-semibold text-[#39252b]"
         >
           Customer ID
         </label>
@@ -52,14 +52,14 @@ export default function LoginForm() {
           value={customerId}
           onChange={(event) => setCustomerId(event.target.value)}
           autoComplete="username"
-          className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-700 focus:ring-2 focus:ring-blue-100"
+          className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
         />
       </div>
 
       <div>
         <label
           htmlFor="password"
-          className="mb-2 block text-sm font-semibold text-slate-700"
+          className="mb-2 block text-sm font-semibold text-[#39252b]"
         >
           Password
         </label>
@@ -71,7 +71,7 @@ export default function LoginForm() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           autoComplete="current-password"
-          className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-blue-700 focus:ring-2 focus:ring-blue-100"
+          className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
         />
       </div>
 
@@ -82,7 +82,7 @@ export default function LoginForm() {
           type="checkbox"
           checked={rememberMe}
           onChange={(event) => setRememberMe(event.target.checked)}
-          className="h-4 w-4 rounded border-slate-300 text-blue-800"
+          className="h-4 w-4 rounded border-slate-300 accent-[#8f1731]"
         />
         Remember me
       </label>
@@ -100,7 +100,7 @@ export default function LoginForm() {
         id="login-button"
         type="submit"
         aria-label="Login to Punjab National Bank demo"
-        className="w-full rounded-xl bg-blue-900 px-4 py-3.5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        className="w-full rounded-xl bg-[#8f1731] px-4 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(143,23,49,0.22)] transition hover:-translate-y-0.5 hover:bg-[#741128] focus:outline-none focus:ring-2 focus:ring-[#e5b83f] focus:ring-offset-2"
       >
         Login
       </button>
@@ -108,14 +108,14 @@ export default function LoginForm() {
       <div className="flex justify-between text-sm">
         <button
           type="button"
-          className="font-medium text-blue-800 hover:underline"
+          className="font-semibold text-[#8f1731] hover:text-[#5f0e24] hover:underline"
         >
           Forgot Customer ID?
         </button>
 
         <button
           type="button"
-          className="font-medium text-blue-800 hover:underline"
+          className="font-semibold text-[#8f1731] hover:text-[#5f0e24] hover:underline"
         >
           Forgot Password?
         </button>
