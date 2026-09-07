@@ -91,14 +91,15 @@ export default function LoginForm() {
       </div>
 
       {/* Remember Me */}
-      <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-600">
+      <label className="flex cursor-pointer items-center gap-3 rounded-lg px-1 py-1.5 text-sm text-slate-600 transition hover:bg-[#f8f3f4]">
         <input
           id="remember-me"
           name="rememberMe"
           type="checkbox"
           checked={rememberMe}
           onChange={(event) => setRememberMe(event.target.checked)}
-          className="h-4 w-4 rounded border-slate-300 accent-[#8f1731]"
+          className="h-4 w-4 cursor-pointer rounded border-slate-300 accent-[#8f1731] transition-all duration-200 hover:scale-110 focus:ring-2 focus:ring-[#8f1731]/20"
+         
         />
         Remember me
       </label>
