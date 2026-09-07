@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { validateCredentials } from "@/lib/auth";
 import { demoUser } from "@/data/user";
@@ -12,6 +13,7 @@ export default function LoginForm() {
   const [password, setPassword] = useState(demoUser.password);
   const [rememberMe, setRememberMe] = useState(true);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,6 +39,7 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Customer ID */}
       <div>
         <label
           htmlFor="customer-id"
@@ -56,6 +59,7 @@ export default function LoginForm() {
         />
       </div>
 
+      {/* Password */}
       <div>
         <label
           htmlFor="password"
@@ -64,17 +68,29 @@ export default function LoginForm() {
           Password
         </label>
 
-        <input
-          id="password"
-          name="password"
-          type="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          autoComplete="current-password"
-          className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
-        />
+        <div className="relative">
+          <input
+            id="password"
+            name="password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            autoComplete="current-password"
+            className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 pr-12 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
+          />
+
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 transition hover:text-[#8f1731] focus:outline-none"
+            aria-label={showPassword ? "Hide password" : "Show password"}
+          >
+            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+          </button>
+        </div>
       </div>
 
+      {/* Remember Me */}
       <label className="flex cursor-pointer items-center gap-3 text-sm text-slate-600">
         <input
           id="remember-me"
@@ -87,6 +103,7 @@ export default function LoginForm() {
         Remember me
       </label>
 
+      {/* Error Message */}
       {error && (
         <div
           role="alert"
@@ -96,6 +113,7 @@ export default function LoginForm() {
         </div>
       )}
 
+      {/* Login Button */}
       <button
         id="login-button"
         type="submit"
@@ -105,17 +123,18 @@ export default function LoginForm() {
         Login
       </button>
 
+      {/* Forgot Links */}
       <div className="flex justify-between text-sm">
         <button
           type="button"
-          className="font-semibold text-[#8f1731] hover:text-[#5f0e24] hover:underline"
+          className="font-semibold text-[#8f1731] transition hover:text-[#5f0e24] hover:underline"
         >
           Forgot Customer ID?
         </button>
 
         <button
           type="button"
-          className="font-semibold text-[#8f1731] hover:text-[#5f0e24] hover:underline"
+          className="font-semibold text-[#8f1731] transition hover:text-[#5f0e24] hover:underline"
         >
           Forgot Password?
         </button>
