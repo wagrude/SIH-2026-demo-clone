@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { validateCredentials } from "@/lib/auth";
 import { demoUser } from "@/data/user";
@@ -122,6 +122,16 @@ export default function LoginForm() {
       >
         Login
       </button>
+        {/* Security Indicator */}
+<div className="flex items-center justify-center gap-2 py-1">
+  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#8f1731]/10">
+    <Lock size={14} className="text-[#8f1731]" />
+  </div>
+
+  <p className="text-xs text-slate-500">
+    Secure authentication protects your banking information.
+  </p>
+</div>
 
       {/* Forgot Links */}
       <div className="flex justify-between text-sm">
