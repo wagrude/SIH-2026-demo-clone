@@ -55,7 +55,7 @@ export default function LoginForm() {
           value={customerId}
           onChange={(event) => setCustomerId(event.target.value)}
           autoComplete="username"
-          className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
+          className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 text-slate-900 shadow-sm outline-none transition-all duration-200 hover:border-[#b88a96] focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
         />
       </div>
 
@@ -76,7 +76,7 @@ export default function LoginForm() {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             autoComplete="current-password"
-            className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 pr-12 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
+           className="w-full rounded-xl border border-[#d8cbd0] bg-white px-4 py-3 pr-12 text-slate-900 shadow-sm outline-none transition-all duration-200 hover:border-[#b88a96] focus:border-[#8f1731] focus:ring-4 focus:ring-[#8f1731]/10"
           />
 
           <button
@@ -118,9 +118,8 @@ export default function LoginForm() {
         id="login-button"
         type="submit"
         aria-label="Login to Punjab National Bank demo"
-        className="w-full rounded-xl bg-[#8f1731] px-4 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(143,23,49,0.22)] transition hover:-translate-y-0.5 hover:bg-[#741128] focus:outline-none focus:ring-2 focus:ring-[#e5b83f] focus:ring-offset-2"
-      >
-        Login
+        className="w-full rounded-xl bg-[#8f1731] px-4 py-3.5 text-sm font-bold text-white shadow-[0_8px_20px_rgba(143,23,49,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#741128] hover:shadow-[0_12px_28px_rgba(143,23,49,0.28)] active:translate-y-0 active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-[#e5b83f] focus:ring-offset-2"
+       > Login
       </button>
         {/* Security Indicator */}
 <div className="flex items-center justify-center gap-2 py-1">
